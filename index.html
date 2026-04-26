@@ -370,6 +370,99 @@
 
     .about-text .section-sub { max-width: 100%; margin-bottom: 2rem; }
 
+
+    .profile-section { background: var(--warm-white); }
+    .profile-wrap {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .profile-photo-card {
+      position: relative;
+      background: var(--cream);
+      border: 1px solid var(--stone);
+      border-radius: 2rem;
+      padding: 1rem;
+      box-shadow: 0 18px 55px rgba(0,0,0,0.08);
+    }
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 7 / 11;
+      border-radius: 1.5rem;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: var(--stone);
+    }
+    .profile-badge-card {
+      position: absolute;
+      left: -18px;
+      bottom: 28px;
+      background: var(--charcoal);
+      color: #fff;
+      border-radius: 1rem;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+      max-width: 230px;
+    }
+    .profile-badge-card strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--gold-light);
+      margin-bottom: .25rem;
+    }
+    .profile-badge-card span {
+      display: block;
+      font-size: .72rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.72);
+    }
+    .profile-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: var(--charcoal);
+      margin-bottom: 1.2rem;
+    }
+    .profile-copy p {
+      font-size: .95rem;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .profile-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .9rem;
+      margin-top: 1.5rem;
+    }
+    .profile-highlight {
+      background: var(--cream);
+      border: 1px solid var(--stone);
+      border-radius: 1rem;
+      padding: 1rem;
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+    }
+    .profile-highlight svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--sage-dark);
+      fill: none;
+      stroke-width: 2;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+    .profile-highlight span {
+      font-size: .83rem;
+      line-height: 1.55;
+      color: var(--charcoal);
+    }
+
     .credentials { display: flex; flex-direction: column; gap: .9rem; margin-top: 1.5rem; }
     .credential-item {
       display: flex; align-items: center; gap: .9rem;
@@ -663,6 +756,7 @@
       .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
       .steps-grid::before { display: none; }
       .issues-grid { grid-template-columns: repeat(3, 1fr); }
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
@@ -670,6 +764,9 @@
       #hero { grid-template-columns: 1fr; padding-top: 6rem; }
       .hero-visual { display: none; }
       #about { grid-template-columns: 1fr; gap: 3rem; }
+      .profile-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+      .profile-badge-card { position: static; margin-top: 1rem; max-width: 100%; }
+      .profile-highlights { grid-template-columns: 1fr; }
       .about-quote-card { display: none; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
@@ -694,6 +791,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#profile">Profile</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#issues">Specialisms</a></li>
     <li><a href="#testimonials">Stories</a></li>
@@ -758,7 +856,7 @@
   </div>
   <div class="trust-item">
     <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-    15+ Years Experience
+    20+ Years Therapeutic Experience
   </div>
   <div class="trust-item">
     <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
@@ -777,32 +875,61 @@
       <div class="about-img-inner"></div>
     </div>
     <div class="about-quote-card">
-      <p>"Healing begins with being truly heard."</p>
+      <p>"Therapy should help you feel heard, understood, and empowered."</p>
       <cite>— H.O.P.E Consulting</cite>
     </div>
   </div>
 
   <div class="about-text reveal">
-    <span class="section-eyebrow">About Us</span>
-    <h2 class="section-title">Qualified Therapists<br>Who Truly Care</h2>
-    <p class="section-sub">At H.O.P.E Consulting, we believe everyone deserves access to high-quality mental health support. Our team of fully qualified, accredited therapists and counsellors are here to provide a non-judgemental, warm, and confidential space for you to explore your thoughts and feelings.</p>
-    <p class="section-sub" style="margin-top:1rem;">Whether you are navigating anxiety, relationship difficulties, grief, trauma, or simply feeling overwhelmed by life — we are here for you, at every step.</p>
+    <span class="section-eyebrow">About H.O.P.E</span>
+    <h2 class="section-title">A Safe, Confidential Space<br>to Understand Yourself</h2>
+    <p class="section-sub">H.O.P.E Consulting offers compassionate counselling for adults and young people, built around Healing, Optimism, Positivity, and Empowerment. The work is collaborative, respectful, and paced around your needs.</p>
+    <p class="section-sub" style="margin-top:1rem;">Whether you are facing anxiety, trauma, relationship difficulties, low self-belief, grief, domestic abuse, or life transitions, you will be met with warmth, care, and a non-judgemental approach.</p>
     <div class="credentials">
       <div class="credential-item">
-        <div class="cred-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <span>Registered with the British Association for Counselling &amp; Psychotherapy (BACP)</span>
-      </div>
-      <div class="credential-item">
         <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <span>UK Council for Psychotherapy (UKCP) Accredited Practitioners</span>
+        <span>Professionally qualified and BACP registered counsellor</span>
       </div>
       <div class="credential-item">
         <div class="cred-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-        <span>Over 15 years of combined clinical experience</span>
+        <span>Over six years’ counselling experience with adults and young people</span>
       </div>
       <div class="credential-item">
-        <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <span>Serving clients across London, Manchester, Birmingham and online UK-wide</span>
+        <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <span>Over twenty years’ therapeutic experience with children, families, and trauma-informed support</span>
+      </div>
+      <div class="credential-item">
+        <div class="cred-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <span>Private, confidential, and collaborative counselling at your pace</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section id="profile" class="profile-section">
+  <div class="profile-wrap">
+    <div class="profile-photo-card reveal">
+      <img src="img/profile.png" alt="Reshma, counsellor at H.O.P.E Consulting" class="profile-photo">
+      <div class="profile-badge-card">
+        <strong>Reshma</strong>
+        <span>BACP registered counsellor · Person-Centred Approach · Trauma-informed practice</span>
+      </div>
+    </div>
+
+    <div class="profile-copy reveal">
+      <span class="section-eyebrow">Meet Your Counsellor</span>
+      <h2 class="section-title">Reshma — Warm, Respectful<br>and Non-Judgemental Support</h2>
+      <p class="profile-intro">“Whatever your reason for seeking therapy, I believe it should be an empowering process.”</p>
+      <p>I offer a safe and confidential space where you can learn more about yourself and the person you would like to become. You can expect me to put you first, to be understanding, respectful, and non-judgemental.</p>
+      <p>I understand that therapy can be a difficult emotional experience. That is why I work with you, at your pace, helping you find your own answers and make the changes — externally or within yourself — that allow you to move forward.</p>
+      <p>I am professionally qualified and BACP registered, providing one-to-one counselling for adults and young people. I am trained in the Person-Centred Approach and integrate elements of other modalities and resources where they can support your individual needs.</p>
+      <p>My work is shaped by more than twenty years of therapeutic experience with children and families, including support around child protection cases, trauma, conditioning, and patterns that shape lives at a deep level. Alongside private practice, I also work with a domestic abuse charity, offering one-to-one counselling and group work.</p>
+      <div class="profile-highlights">
+        <div class="profile-highlight"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l7.78-7.78a5.5 5.5 0 0 0 1.06-8.84z"/></svg><span>Compassionate, trauma-informed counselling</span></div>
+        <div class="profile-highlight"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span>Person-centred work tailored to individual needs</span></div>
+        <div class="profile-highlight"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Safe, confidential, and ethical practice</span></div>
+        <div class="profile-highlight"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg><span>Adults, young people, families, and group work experience</span></div>
       </div>
     </div>
   </div>
@@ -909,33 +1036,41 @@
 <section id="testimonials">
   <div class="testimonials-header reveal">
     <span class="section-eyebrow">Client Stories</span>
-    <h2 class="section-title">Words From Those We've Supported</h2>
-    <p class="section-sub">Our clients' experiences are at the heart of everything we do.</p>
+    <h2 class="section-title">Words From Clients Supported by Reshma</h2>
+    <p class="section-sub" style="text-align:center; margin: 0 auto; max-width: 600px;">
+      Shared anonymously to protect confidentiality while reflecting the care, warmth, and progress clients have experienced.
+    </p>
   </div>
   <div class="testimonials-grid">
     <div class="testimonial-card reveal">
       <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <blockquote>"Working with H.O.P.E Consulting has been truly transformative. For the first time in years I feel understood, supported, and genuinely hopeful about the future."</blockquote>
-      <div class="testimonial-author">
-        <div class="author-avatar" style="background:var(--sage);">S</div>
-        <div><div class="author-name">Sarah M.</div><div class="author-loc">London</div></div>
-      </div>
+      <blockquote>"I have learned so much from Reshma and she has been a constant and warm guide for me throughout my mental health journey. I feel better equipped to face challenges and have noticed myself grow."</blockquote>
+      <div class="testimonial-author"><div class="author-avatar" style="background:var(--sage);">C</div><div><div class="author-name">Client</div><div class="author-loc">Individual counselling</div></div></div>
     </div>
     <div class="testimonial-card reveal">
       <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <blockquote>"My therapist created such a warm, non-judgemental environment. The online sessions were seamless and I could fit them around my busy schedule with ease."</blockquote>
-      <div class="testimonial-author">
-        <div class="author-avatar" style="background:var(--gold);">J</div>
-        <div><div class="author-name">James T.</div><div class="author-loc">Manchester</div></div>
-      </div>
+      <blockquote>"Reshma really cares and listens and has the knowledge and wisdom to help. Her support has helped me to heal and fight the demons."</blockquote>
+      <div class="testimonial-author"><div class="author-avatar" style="background:var(--gold);">C</div><div><div class="author-name">Client</div><div class="author-loc">Therapy support</div></div></div>
     </div>
     <div class="testimonial-card reveal">
       <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <blockquote>"After struggling with anxiety for over a decade, I finally found the support I needed. The team at H.O.P.E Consulting genuinely changed my life."</blockquote>
-      <div class="testimonial-author">
-        <div class="author-avatar" style="background:var(--sage-dark);">P</div>
-        <div><div class="author-name">Priya K.</div><div class="author-loc">Birmingham</div></div>
-      </div>
+      <blockquote>"Reshma has been my first therapist and the experience has been great. I have felt supported and listened to. She has helped me work through my therapy goals with patience and empathy."</blockquote>
+      <div class="testimonial-author"><div class="author-avatar" style="background:var(--sage-dark);">C</div><div><div class="author-name">Client</div><div class="author-loc">Goal-focused therapy</div></div></div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <blockquote>"Reshma has been an amazing help. She supported and guided me while allowing me to explore in a collaborative way. I would highly recommend her service."</blockquote>
+      <div class="testimonial-author"><div class="author-avatar" style="background:var(--sage);">C</div><div><div class="author-name">Client</div><div class="author-loc">Collaborative counselling</div></div></div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <blockquote>"I couldn’t have asked for a better experience in therapy. Our conversations felt like a gentle, guided journey through everything I needed and didn’t know I needed."</blockquote>
+      <div class="testimonial-author"><div class="author-avatar" style="background:var(--gold);">C</div><div><div class="author-name">Client</div><div class="author-loc">Personal growth</div></div></div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <blockquote>"Reshma has been an amazing therapist. I have a totally different outlook on life due to the tools and support I have received. She is kind, listens incredibly well and gives space when needed."</blockquote>
+      <div class="testimonial-author"><div class="author-avatar" style="background:var(--sage-dark);">C</div><div><div class="author-name">Client</div><div class="author-loc">Therapy journey</div></div></div>
     </div>
   </div>
 </section>
